@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="ass3.css">
+  <script src="ass3.js" defer></script>
+  <title>Hangman Game</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Hang the Man</h1>
+    <h3>Choose the letters below to guess the word!</h3>
+    <div class="letter-div"></div>
+    <div class="word-div"></div>
+    <h3>Remaining lives: <span class="lives"></span></h3>
+    <div class="row reset-div">
+      <button class="reset-btn">Reset</button>
+    </div>
+
+    <div class="notif-container">
+      <div class="notif hidden">
+        <h3 class="notif-content">You won</h3>
+        <h4>Correct word: <span class="notif-span"></span></h4>
+        <button class="notif-btn">Play again</button>
+      </div>
+    </div> 
+  </div>
+</body>
+</html>
