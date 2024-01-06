@@ -12,12 +12,10 @@ let lives;
 
 const words = ['test','hangman','code','javascript'];
 
-// get random word from words
 const getRandomWord = list => {
   return list[Math.floor(Math.random() * words.length)];
 };
 
-// random word will be selected upon every reset and init
 let select_word;
 
 const init = state => {
@@ -49,7 +47,7 @@ const init = state => {
     //wordDiv.innerHTML = html;
   }
 };
-// initializing the page
+
 init('start');
 
 // show notification
@@ -62,15 +60,13 @@ const showNotif = msg => {
 // decrease life
 const decreaseLife = () => {
   lives--;
-  //   console.log(lives);
   liveSpan.textContent = lives;
   if (lives === 0) {
     showNotif('lost');
   }
 };
 
-// get multiple matching indexes of pressed letter
-// to the selected word
+// get matching indexes of clicked letter??
 const getindexes = letter => {
   let indexes = [];
   [...select_word].forEach((value, i) => {
@@ -79,11 +75,10 @@ const getindexes = letter => {
       indexes.push(index);
     }
   });
-  //   console.log(indexes);
   return indexes;
 };
 
-// check if we get complete word
+// check if word completed
 const checkWord = () => {
   let value = true;
   for (let i = 0; i < wordDiv.children.length; i++) {
@@ -110,17 +105,14 @@ const letterPress = function () {
   this.classList.add('disabled'); // disable letter after clicked
 };
 
-// listening to letter buttons presses
 letters.forEach(btn => {
   btn.addEventListener('click', letterPress);
 });
 
-// listening to reset btn
 resetButton.addEventListener('click', () => {
   init('reset');
 });
 
-// listening to play again button
 playAgain.addEventListener('click', () => {
   init('reset');
 }); 
